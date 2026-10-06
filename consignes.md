@@ -25,7 +25,7 @@ Application d'exemple en **AstroJS SSR** avec :
 - Transférez la BDD locale vers le VPS (1pts)
 - Préparer le fichier .env coté VPS (0.5pt)
 - Certifiez le site clients.<votredomaine>.<tld> (2pts)
-- Configurez Apache pour l'accès à l'application avec servername : clients.<votredomaine>.<tld> et numéro de port : 3018  (2pts)
+- Configurez Apache pour l'accès à l'application avec servername : clients.<votredomaine>.<tld> et numéro de port : 3344  (2pts)
 - Générez la version build du code sur le VPS (0.5pts)
 - Installer l'application en tant que service sur le VPS (4pts)
 - Lancer l'application (0.5pts)
