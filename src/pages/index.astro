@@ -76,7 +76,7 @@ const locationsCount = clients.filter(
        ========================= */
 
     .topbar {
-      height: 72px;
+      min-height: 72px;
       background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
@@ -90,6 +90,16 @@ const locationsCount = clients.filter(
       position: sticky;
       top: 0;
       z-index: 1000;
+    }
+
+    .topbar-content {
+      width: 100%;
+      max-width: 1500px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
     }
 
     .brand {
@@ -161,6 +171,28 @@ const locationsCount = clients.filter(
       border-color: #d5dae3;
     }
 
+    .login-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border: 1px solid var(--primary);
+      border-radius: 10px;
+      background: var(--primary);
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 0 5px 14px rgba(79, 70, 229, 0.2);
+      transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+    }
+
+    .login-button:hover {
+      background: #4338ca;
+      box-shadow: 0 8px 18px rgba(79, 70, 229, 0.28);
+      transform: translateY(-1px);
+    }
+
     /* =========================
        MAIN
        ========================= */
@@ -172,7 +204,31 @@ const locationsCount = clients.filter(
     }
 
     .welcome {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 28px;
       margin-bottom: 25px;
+      border: 1px solid #dfe5ff;
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 92% 15%, rgba(129, 140, 248, 0.22), transparent 32%),
+        linear-gradient(135deg, #ffffff 0%, #f5f7ff 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .welcome-copy {
+      max-width: 680px;
+    }
+
+    .welcome-eyebrow {
+      margin: 0 0 8px;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     .welcome h1 {
@@ -425,6 +481,12 @@ const locationsCount = clients.filter(
         padding: 0 16px;
       }
 
+      .welcome {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 22px;
+      }
+
       .user-info {
         display: none;
       }
@@ -452,37 +514,44 @@ const locationsCount = clients.filter(
 
   <!-- HEADER -->
   <header class="topbar">
-
-    <div class="brand">
-      <div class="brand-icon">
-        📍
-      </div>
-
-      <div>
-        <div class="brand-title">
-          Clients
+    <div class="topbar-content">
+      <div class="brand">
+        <div class="brand-icon">
+          📍
         </div>
 
-        <div class="brand-subtitle">
-          Gestion géographique
+        <div>
+          <div class="brand-title">
+            Clients
+          </div>
+
+          <div class="brand-subtitle">
+            Gestion géographique
+          </div>
         </div>
       </div>
+
+      <a class="login-button" href="/login">
+        Se connecter
+        <span aria-hidden="true">→</span>
+      </a>
     </div>
-
   </header>
   <main>
 
     <!-- INTRODUCTION -->
 
     <section class="welcome">
+      <div class="welcome-copy">
+        <p class="welcome-eyebrow">Vue d'ensemble</p>
+        <h1>
+          Tableau de bord
+        </h1>
 
-      <h1>
-        Tableau de bord
-      </h1>
-
-      <p>
-        Visualisez vos clients et leur localisation géographique.
-      </p>
+        <p>
+          Visualisez vos clients et leur localisation géographique.
+        </p>
+      </div>
 
     </section>
 
